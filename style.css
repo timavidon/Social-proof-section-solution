@@ -65,12 +65,12 @@ body {
   place-content: center;
   min-height: 100dvh;
   font-family: var(--ff-primary);
-  padding: 1.5rem;
+  padding: 3rem 1.5rem;
 }
 
 .container {
   --border-radius: 0.4rem;
-  max-width: 80rem;
+  max-width: 69.5rem;
 }
 
 .intro {
@@ -86,7 +86,7 @@ body {
   margin-inline: auto;
   margin-bottom: 1.65rem;
   letter-spacing: -0.03125rem;
-  line-height: 0.8;
+  line-height: 0.85;
 }
 
 .desc {
@@ -94,19 +94,21 @@ body {
   font-weight: var(--fw-medium);
   color: var(--clr-neutral-300);
   line-height: 1.35;
+  letter-spacing: -0.0075rem;
 }
 
 .ratings {
-  margin-block: 2.6rem;
+  margin-top: 2.6rem;
 }
 
 .rating {
+  margin-inline: auto;
   display: grid;
   place-content: center;
-  gap: 0.6rem;
+  gap: 0.8rem;
   border-radius: var(--border-radius);
   background-color: var(--clr-neutral-200);
-  padding: 0.9rem;
+  padding: 0.95rem;
   letter-spacing: 0.05rem;
 }
 
@@ -122,14 +124,16 @@ body {
 }
 
 .rating__place {
-  font-size: var(--fs-400);
+  font-size: var(--fs-500);
   font-weight: var(--fw-bold);
+  letter-spacing: 0rem;
   color: var(--clr-primary);
 }
 
 .feedbacks {
   display: grid;
-  gap: 1rem;
+  gap: 1.9rem;
+  margin-top: 3rem;
 }
 
 .user {
@@ -138,14 +142,14 @@ body {
   color: var(--clr-neutral-100);
   background-color: var(--clr-primary);
   padding: 2.5rem 2rem;
-  line-height: 1.5;
+  line-height: 1.1;
 }
 
 .user header {
   display: flex;
   align-items: center;
   gap: 1.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .user__pfp {
@@ -166,6 +170,7 @@ body {
 
 .user__feedback {
   font-size: var(--fs-500);
+  line-height: 1.4;
 }
 
 .attribution {
@@ -174,12 +179,21 @@ body {
 }
 
 .attribution a {
-  color: hsl(228, 45%, 44%);
+  font-weight: var(--fw-bold);
+  color: var(--clr-primary);
+}
+
+.attribution a:hover {
+  color: var(--clr-secondary);
 }
 
 @media (min-width: 50em) {
   :root {
-    --fs-700: 3rem;
+    --fs-700: 3.5rem;
+  }
+
+  body {
+    padding: 5.475rem 1.5rem;
   }
 
   .container {
@@ -195,43 +209,63 @@ body {
 
   .heading {
     margin-inline: 0;
+    letter-spacing: -0.12rem;
   }
 
   .ratings {
+    margin-top: 0rem;
+    margin-left: 6rem;
     grid-column: 2 / 3;
     align-self: center;
   }
 
   .rating {
+    margin-inline: revert;
+    max-width: 27.8125rem;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    flex-wrap: wrap;
+    padding: 1.1rem;
+    gap: 0;
   }
 
-  .rating:first-of-type {
-    transform: translateX(-2rem);
+  .rating__place {
+    padding-right: 3.5rem;
   }
 
-  .rating:last-of-type {
-    transform: translateX(2rem);
+  .rating:nth-child(1) {
+    margin-right: auto;
+  }
+
+  .rating:nth-child(2) {
+    margin-inline: auto;
+  }
+
+  .rating:nth-child(3) {
+    margin-left: auto;
   }
 
   .feedbacks {
     display: flex;
     grid-column: 1 / -1;
+    margin-top: -0.3rem;
+  }
+
+  .user {
+    max-width: 21.8rem;
   }
 
   .user:nth-child(2) {
-    transform: translateY(3rem);
+    transform: translateY(1rem);
   }
 
   .user:nth-child(3) {
-    transform: translateY(6rem);
+    transform: translateY(2rem);
   }
 
   .attribution {
-    position: fixed;
-    bottom: 0;
+    text-align: center;
+    padding-top: 5rem;
+    padding-bottom: 0rem;
   }
 }
